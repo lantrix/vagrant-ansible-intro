@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: Install EPEL repo
+    yum:
+      name: epel-release
+      state: present
+
+  - name: Install Ansible
+    yum:
+      name: ansible
+      state: present
+
+  - name: Install git, vim
+    yum:
+      state: present
+      name:
+        - git
+        - vim
